@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Welcome | Sign in or create an account</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- About button -->
+  <div class="top-bar">
+    <button class="about-btn" id="openAbout">
+      <i class="fa-regular fa-user"></i> About me
+    </button>
+  </div>
+
+  <main class="card">
+
+    <div class="brand">
+      <div class="brand-logo"><i class="fa-solid fa-shield-halved"></i></div>
+      <span class="brand-name">MyApp</span>
+    </div>
+
+    <!-- tabs -->
+    <div class="tabs" id="tabs">
+      <div class="tab-slider"></div>
+      <button class="tab active" data-target="login" type="button">Login</button>
+      <button class="tab" data-target="register" type="button">Register</button>
+    </div>
+
+    <!-- LOGIN FORM -->
+    <form id="login" class="show" novalidate>
+      <h1>Welcome back</h1>
+      <p class="subtitle">Sign in to continue to your account.</p>
+
+      <div class="field">
+        <label for="loginEmail">Email</label>
+        <div class="input-wrap">
+          <i class="fa-regular fa-envelope left"></i>
+          <input type="email" id="loginEmail" placeholder="you@example.com" autocomplete="email">
+        </div>
+        <p class="error-msg">Please enter a valid email.</p>
+      </div>
+
+      <div class="field">
+        <label for="loginPass">Password</label>
+        <div class="input-wrap">
+          <i class="fa-solid fa-lock left"></i>
+          <input type="password" id="loginPass" placeholder="Your password" autocomplete="current-password">
+          <button type="button" class="eye" aria-label="Show or hide password">
+            <i class="fa-regular fa-eye"></i>
+          </button>
+        </div>
+        <p class="error-msg">Please enter your password.</p>
+      </div>
+
+      <div class="row">
+        <label class="check"><input type="checkbox"> Remember me</label>
+        <a href="#">Forgot password?</a>
+      </div>
+
+      <button type="submit" class="btn">Sign in</button>
+
+      <div class="divider">or continue with</div>
+      <div class="social">
+        <button type="button" aria-label="Google"><i class="fa-brands fa-google"></i></button>
+        <button type="button" aria-label="Apple"><i class="fa-brands fa-apple"></i></button>
+        <button type="button" aria-label="GitHub"><i class="fa-brands fa-github"></i></button>
+      </div>
+    </form>
+
+    <!-- REGISTER FORM -->
+    <form id="register" novalidate>
+      <h1>Create account</h1>
+      <p class="subtitle">It only takes a minute to get started.</p>
+
+      <div class="field">
+        <label for="regName">Full name</label>
+        <div class="input-wrap">
+          <i class="fa-regular fa-user left"></i>
+          <input type="text" id="regName" placeholder="John Doe" autocomplete="name">
+        </div>
+        <p class="error-msg">Please enter your name.</p>
+      </div>
+
+      <div class="field">
+        <label for="regEmail">Email</label>
+        <div class="input-wrap">
+          <i class="fa-regular fa-envelope left"></i>
+          <input type="email" id="regEmail" placeholder="you@example.com" autocomplete="email">
+        </div>
+        <p class="error-msg">Please enter a valid email.</p>
+      </div>
+
+      <div class="field">
+        <label for="regPass">Password</label>
+        <div class="input-wrap">
+          <i class="fa-solid fa-lock left"></i>
+          <input type="password" id="regPass" placeholder="Create a password" autocomplete="new-password">
+          <button type="button" class="eye" aria-label="Show or hide password">
+            <i class="fa-regular fa-eye"></i>
+          </button>
+        </div>
+        <p class="error-msg">Your password doesn't meet all the rules yet.</p>
+
+        <!-- strength meter -->
+        <div class="strength">
+          <div class="bars" id="bars">
+            <span></span><span></span><span></span><span></span>
+          </div>
+          <div class="strength-text">
+            <span>Password strength</span>
+            <b id="strengthLabel">-</b>
+          </div>
+          <ul class="rules" id="rules">
+            <li data-rule="length"><i class="fa-regular fa-circle"></i> 8+ characters</li>
+            <li data-rule="letter"><i class="fa-regular fa-circle"></i> A letter</li>
+            <li data-rule="number"><i class="fa-regular fa-circle"></i> A number</li>
+            <li data-rule="special"><i class="fa-regular fa-circle"></i> A symbol (!@#$...)</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="field">
+        <label for="regConfirm">Confirm password</label>
+        <div class="input-wrap">
+          <i class="fa-solid fa-key left"></i>
+          <input type="password" id="regConfirm" placeholder="Repeat your password" autocomplete="new-password">
+          <button type="button" class="eye" aria-label="Show or hide password">
+            <i class="fa-regular fa-eye"></i>
+          </button>
+        </div>
+        <p class="error-msg">Passwords don't match.</p>
+      </div>
+
+      <div class="terms" id="termsBox">
+        <label class="check">
+          <input type="checkbox" id="regTerms">
+          <span>I accept the <a href="#">Terms of Service</a> and <a href="#">Privacy Policy</a></span>
+        </label>
+        <p class="error-msg">You must accept the terms to continue.</p>
+      </div>
+
+      <button type="submit" class="btn">Create account</button>
+
+      <div class="divider">or sign up with</div>
+      <div class="social">
+        <button type="button" aria-label="Google"><i class="fa-brands fa-google"></i></button>
+        <button type="button" aria-label="Apple"><i class="fa-brands fa-apple"></i></button>
+        <button type="button" aria-label="GitHub"><i class="fa-brands fa-github"></i></button>
+      </div>
+    </form>
+
+  </main>
+
+  <p class="footer">&copy; 2026 All rights reserved - By Iliasse Dev &lt;/&gt;</p>
+
+  <!-- About modal -->
+  <div class="overlay" id="aboutOverlay">
+    <div class="about-box" role="dialog" aria-modal="true" aria-labelledby="aboutTitle">
+      <button class="close" id="closeAbout" aria-label="Close"><i class="fa-solid fa-xmark"></i></button>
+
+      <div class="avatar">ID</div>
+      <h2 id="aboutTitle">Iliasse Dev</h2>
+      <div class="role">Web Developer</div>
+
+      <p>
+        My name is Iliasse Bousekine, an IT student passionate about software development, web development, and cybersecurity. I enjoy learning new technologies, building useful applications, and turning creative ideas into real projects. I am constantly improving my programming skills and exploring new technologies to grow as a developer.
+      </p>
+
+      <div class="skills">
+        <span>HTML</span>
+        <span>CSS</span>
+        <span>JavaScript</span>
+      </div>
+
+      <div class="copy">&copy; 2026 All rights reserved - By Iliasse Dev &lt;/&gt;</div>
+    </div>
+  </div>
+
+  <div class="toast" id="toast"></div>
+
+  <script src="script.js"></script>
+</body>
+</html>
